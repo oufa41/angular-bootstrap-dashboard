@@ -2,19 +2,20 @@
 
 <div id="accordion">
     <ul class="list-group" [attr.id]="'accordion_' + name" *ngFor="let name of names">
-        <li class="collapsed p-2" data-toggle="collapse" [attr.href]="'#collapse_'+name" [attr.aria-expanded]="false">
+        <li class="root collapsed p-2 tree-root" data-toggle="collapse" [attr.href]="'#collapse_'+name" [attr.aria-expanded]="false">
             <em class="fa fa-chevron-right"></em>
             <em class="fa fa-chevron-down"></em> Collapsible Group Item {{name}}
         </li>
         <div [attr.id]="'collapse_'+name" class="collapse" data-parent="#accordion">
             <ul *ngFor="let leaf of leafs">
                 <div *ngIf="itemClicked === leaf ; else notClicked">
-                    <li class="fa fa-check-circle div.example selected hover p-2" (click)="leafClick(leaf)"> {{leaf}}</li>
+                    <li class="leaf-clicked hover p-2">{{leaf}}</li>
                 </div>
                 <ng-template #notClicked>
-                    <li class="fa fa-circle-o div.example hover p-2" (click)="leafClick(leaf)"> {{leaf}}</li>
+                    <li class="leaf hover p-2" (click)="leafClick(leaf)">{{leaf}}</li>
                 </ng-template>
             </ul>
+
         </div>
     </ul>
 </div>

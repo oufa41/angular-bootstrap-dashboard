@@ -1,0 +1,106 @@
+@media screen and (min-width: 701px) {
+    .tree-root {
+        font-size: 17px;
+    }
+    .tree-leaf {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .tree-root {
+        font-size: 15px;
+    }
+    .tree-leaf {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tree-root {
+        font-size: 12px;
+    }
+    .tree-leaf {
+        font-size: 10px;
+    }
+}
+
+li[aria-expanded=true] .fa-chevron-right {
+    display: none;
+}
+
+li[aria-expanded=false] .fa-chevron-down {
+    display: none;
+}
+
+.selected {
+    color: #007bff;
+}
+
+li:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+li.root {
+    list-style-type: none;
+    margin: 0px;
+    user-select: none;
+}
+
+li.leaf {
+    list-style-type: none;
+    margin: 0px;
+    user-select: none;
+    margin-left: -20px;
+    font-size: tree-leaf;
+}
+
+li.leaf:before {
+    //content: "\f10c";
+    content: "\f10c";
+    font-family: 'FontAwesome';
+    user-select: none;
+    padding-right: 0.5em;
+}
+
+li.leaf-clicked {
+    list-style-type: none;
+    color: #007bff;
+    margin: 0px;
+    user-select: none;
+    margin-left: -20px;
+    font-size: tree-leaf;
+}
+
+li.leaf-clicked:before {
+    // content: "\f0da";
+    content: "\f058";
+    font-family: 'FontAwesome';
+    user-select: none;
+    padding-right: 0.5em;
+    color: #007bff;
+}
+
+.show {
+    height: auto;
+    max-height: 150px;
+    overflow: auto;
+    transition-timing-function: ease;
+    transition-duration: .35s;
+    transition-property: height;
+}
+
+.collapsing {
+    position: relative;
+    overflow: hidden;
+    transition-timing-function: ease;
+    transition-duration: .35s;
+    transition-property: height;
+    &.height {
+        max-height: 150px;
+        transition-duration: .35s;
+        transition-property: height;
+        transition-timing-function: ease;
+    }
+}
