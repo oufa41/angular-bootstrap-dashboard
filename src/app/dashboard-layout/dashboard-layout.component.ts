@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
@@ -12,4 +12,8 @@ export class DashboardLayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickOnFab() {
+   $('.btn-group-fab').toggleClass('active');
+   ($('has-tooltip') as any).tooltip();
+  }
 }
