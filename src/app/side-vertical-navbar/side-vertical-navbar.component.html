@@ -2,7 +2,7 @@
 
 <div id="accordion">
     <ul class="list-group" [attr.id]="'accordion_' + name" *ngFor="let name of names">
-        <li class="root collapsed p-2 tree-root" data-toggle="collapse" [attr.href]="'#collapse_'+name" [attr.aria-expanded]="false">
+        <li class="root collapsed p-2 tree-root" (click)="rootClick(name)" data-toggle="collapse" [attr.href]="'#collapse_'+name" [attr.aria-expanded]="false">
             <em class="fa fa-chevron-right"></em>
             <em class="fa fa-chevron-down"></em> Collapsible Group Item {{name}}
         </li>
